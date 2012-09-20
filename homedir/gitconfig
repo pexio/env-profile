@@ -1,0 +1,18 @@
+[user]
+#        email = user@example.com
+
+[alias]
+    glog = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    co = checkout
+    st = status
+    ci = commit
+    br = branch
+    spelllog = "!ss() { git log ${@:1:($#-1)} $(gaze where ${@:$#} |cut -d\" \" -f3)/${@:$#} ; }; ss"
+
+[color]
+    diff = auto
+    status = auto
+    branch = auto
+
+[core]
+    autocrlf = input
