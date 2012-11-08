@@ -1,0 +1,22 @@
+
+# MacPorts Installer addition on 2011-12-23_at_23:28:20: adding an appropriate PATH variable for use with MacPorts.
+export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+# Finished adapting your PATH environment variable for use with MacPorts.
+LANG=en_GB.UTF-8
+export LANG
+
+alias ls="ls -G"
+alias la="ls -Ga"
+alias ll="ls -lG"
+
+# Set git autocompletion and PS1 integration
+GIT_COMPLETION_FILE='/opt/local/share/doc/git-core/contrib/completion/git-completion.bash';
+GIT_PROMPT_FILE='/opt/local/share/doc/git-core/contrib/completion/git-prompt.sh'
+if [ -f $GIT_COMPLETION_FILE ]; then
+ . $GIT_COMPLETION_FILE
+fi
+if [ -f $GIT_PROMPT_FILE ]; then
+. $GIT_PROMPT_FILE
+fi
+GIT_PS1_SHOWDIRTYSTATE=true
+PS1='\[\033[32m\]\u@\h\[\033[00m\]:\[\033[36m\]\w\[\033[31m\]$(__git_ps1)\[\033[00m\]\$ '
