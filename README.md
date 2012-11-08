@@ -1,4 +1,4 @@
 env-profile
 ===========
 
-environment files like .profile and .bashrc
+Personal environment files like .profile and .bashrc
