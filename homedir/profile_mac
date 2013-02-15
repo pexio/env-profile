@@ -8,6 +8,7 @@ export LANG
 alias ls="ls -G"
 alias la="ls -Ga"
 alias ll="ls -lG"
+alias mg="mg -n"
 
 # Set git autocompletion and PS1 integration
 GIT_COMPLETION_FILE='/opt/local/share/doc/git-core/contrib/completion/git-completion.bash';
