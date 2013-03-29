@@ -1,18 +1,21 @@
 [user]
-#        email = user@example.com
+#	name = John Doe
+#	email = user@example.com
 
 [alias]
-    glog = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-    co = checkout
-    st = status
-    ci = commit
-    br = branch
-    spelllog = "!ss() { git log ${@:1:($#-1)} $(gaze where ${@:$#} |cut -d\" \" -f3)/${@:$#} ; }; ss"
+	co = checkout
+	st = status
+	ci = commit
+	br = branch
+	rb = rebase
+	glog = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	spelllog = "!ss() { git log ${@:1:($#-1)} $(gaze where ${@:$#} |cut -d\" \" -f3)/${@:$#} ; }; ss"
+
+[push]
+	default = simple
 
 [color]
-    diff = auto
-    status = auto
-    branch = auto
+	ui = true
 
 [core]
-    autocrlf = input
+	autocrlf = input
