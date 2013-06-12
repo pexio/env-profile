@@ -22,5 +22,8 @@ if [ -d "$HOME/bin" ] ; then
 fi
 PATH="/sbin:$PATH"
 
-GIT_PS1_SHOWDIRTYSTATE=true
-PS1='\[\033[32m\]\u@\h\[\033[00m\]:\[\033[36m\]\w\[\033[31m\]$(__git_ps1)\[\033[00m\]\$ '
+# Uncomment to use a fancy color prompt with git repo status
+#GIT_PS1_SHOWDIRTYSTATE=true
+#PS1='\[\033[32m\]\u@\h\[\033[00m\]:\[\033[36m\]\w\[\033[31m\]$(__git_ps1)\[\033[00m\]\$ '
+#Or Uncomment this to use a standard color prompt 
+#PS1='\[\033[32m\]\u@\h\[\033[00m\]:\[\033[36m\]\w\[\033[00m\]\$ '
