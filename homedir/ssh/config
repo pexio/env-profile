@@ -1,0 +1,15 @@
+ServerAliveInterval 1200
+#Default GitHub
+Host github.com
+	HostName github.com
+	User git
+	IdentityFile ~/.ssh/id_rsa
+Host git.example.com
+	User git
+	IdentityFile ~/.ssh/id_rsa_example
+Host web.example.com
+	User <ssh user>
+	ForwardX11 yes
+	ForwardAgent yes
+Host app.example.com
+	Port 2200
