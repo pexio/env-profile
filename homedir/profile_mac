@@ -11,7 +11,7 @@ alias ll="ls -lG"
 alias mg="mg -n"
 
 # Set git autocompletion and PS1 integration
-GIT_COMPLETION_FILE='/opt/local/etc/profile.d/bash_completion.sh'
+GIT_COMPLETION_FILE='/opt/local/etc/profile.d/bash_completion.sh'	# sudo port install bash-completion
 GIT_PROMPT_FILE='/opt/local/share/git/git-prompt.sh'
 if [ -f $GIT_COMPLETION_FILE ]; then
 	 . $GIT_COMPLETION_FILE
