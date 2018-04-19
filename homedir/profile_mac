@@ -9,6 +9,8 @@ alias ls="ls -G"
 alias la="ls -Ga"
 alias ll="ls -lG"
 alias mg="mg -n"
+alias gp="git pull"
+alias piong="ping"
 
 # Set git autocompletion and PS1 integration
 GIT_COMPLETION_FILE='/opt/local/etc/profile.d/bash_completion.sh'	# sudo port install bash-completion
