@@ -1,19 +1,21 @@
 # Macports PATH environment variable
 export PATH=/opt/local/bin:/opt/local/sbin:~/bin:$PATH
 
-LANG=en_GB.UTF-8
-export LANG
+export LC_ALL=en_US.UTF-8
+export LANG=en_GB.UTF-8
 
 alias ls="ls -G"
 alias la="ls -Ga"
 alias ll="ls -lG"
 alias mg="mg -n"
 alias gp="git pull"
-alias ssh-password="ssh -o PreferredAuthentications=password -o PubkeyAuthentication=no"
-#alias gfr="git fetch && git rebase"
+alias gfr="git fetch && git rebase"
 alias gfrp="git fetch && git rebase && git push"
+alias piong="ping"
+alias ssh-forcepw="ssh -o PreferredAuthentications=password -o PubkeyAuthentication=no"
+alias testssl="docker run -t --rm mvance/testssl:2.9.5"
 alias kaz="ssh -A kaz.pexio.net"
-alias jhost-aws-us="ssh -A user@server.dom.tld"
+#alias jhost-aws-us="ssh -A user@server.dom.tld"
 
 # Set git autocompletion and PS1 integration
 GIT_COMPLETION_FILE='/opt/local/etc/profile.d/bash_completion.sh'
@@ -32,6 +34,5 @@ else
 fi
 
 # increase history from default 500
-HISTSIZE=1000
-HISTFILESIZE=1000
-
+HISTSIZE=3000
+HISTFILESIZE=3000
