@@ -1,7 +1,10 @@
 
-# MacPorts Installer addition on 2011-12-23_at_23:28:20: adding an appropriate PATH variable for use with MacPorts.
-export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+# MacPorts Installer addition on 2017-01-15_at_23:45:18: adding an appropriate PATH variable for use with MacPorts.
+export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 # Finished adapting your PATH environment variable for use with MacPorts.
+export PATH=~/bin:$PATH
+# adding virtualenv to PATH
+export PATH="/Users/david/Library/Python/3.8/bin:$PATH"
 LANG=en_GB.UTF-8
 export LANG
 
@@ -9,21 +12,41 @@ alias ls="ls -G"
 alias la="ls -Ga"
 alias ll="ls -lG"
 alias mg="mg -n"
+alias gp="git pull"
+alias gpu="git push"
+alias testssl="docker run --rm -ti drwetter/testssl.sh:latest"
+alias bastion-acc2='ssh -AL 9996:bastion-acc.gogift.io:22 kaz.pexio.net -vN & sleep 2; ssh -L 5432:rds.aegmtggtmlhz.net:5432 karim@localhost -p9996 -Nv'
+alias bastion-pre2='ssh -AL 9997:bastion-pre.gogift.io:22 kaz.pexio.net -vN & sleep 2; ssh -L 5433:rds.ppegmtgghzulq.net:5432 karim@localhost -p9997 -Nv'
+alias bastion2='ssh -AL 9998:bastion.gogift.io:22 kaz.pexio.net -vN & sleep 2; ssh -L 5434:rds.pegmtggmuoox.net:5432 karim@localhost -p9998 -Nv'
+alias bastion2ro='ssh -AL 9998:bastion.gogift.io:22 kaz.pexio.net -vN & sleep 2; ssh -L 5434:rds-ro.pegmtggmuoox.net:5432 karim@localhost -p9998 -Nv'
+alias MTGA='open /Users/Shared/Epic\ Games/MagicTheGathering/MTGA.app'
+alias yamllint='docker run --rm -it -v $(pwd):/data cytopia/yamllint -d "{extends: relaxed, rules: {line-length: {max: 120}}}" .'
 
 # Set git autocompletion and PS1 integration
 GIT_COMPLETION_FILE='/opt/local/etc/profile.d/bash_completion.sh'
 GIT_PROMPT_FILE='/opt/local/share/git/git-prompt.sh'
 if [ -f $GIT_COMPLETION_FILE ]; then
-	 . $GIT_COMPLETION_FILE
+         . $GIT_COMPLETION_FILE
 fi
 if [ -f $GIT_PROMPT_FILE ]; then
-	. $GIT_PROMPT_FILE
-	GIT_PS1_SHOWDIRTYSTATE=true
-	PS1='\[\033[32m\]\u@\h\[\033[00m\]:\[\033[36m\]\w\[\033[31m\]$(__git_ps1)\[\033[00m\]\$ '
+        . $GIT_PROMPT_FILE
+        GIT_PS1_SHOWDIRTYSTATE=true
+        PS1='\[\033[32m\]\u@\h\[\033[00m\]:\[\033[36m\]\w\[\033[31m\]$(__git_ps1)\[\033[00m\]\$ '
 else
-	PS1='\[\033[32m\]\u@\h\[\033[00m\]:\[\033[36m\]\w\[\033[00m\]\$ '
+        PS1='\[\033[32m\]\u@\h\[\033[00m\]:\[\033[36m\]\w\[\033[00m\]\$ '
 fi
+
+# Enable support for direnv
+eval "$(direnv hook bash)"
 
 # increase history from default 500
 HISTSIZE=1000
 HISTFILESIZE=1000
+
+# NVM installed from https://github.com/nvm-sh/nvm#installing-and-updating
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+
